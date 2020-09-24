@@ -10,3 +10,5 @@ This application is build using the following technologies:
  - Storybook
  - Jest
  - React testing library
+ 
+ *under development*
