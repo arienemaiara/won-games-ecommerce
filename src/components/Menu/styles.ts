@@ -83,7 +83,8 @@ type MenuFullProps = {
 
 export const MenuFull = styled.nav<MenuFullProps>`
   ${({ theme, isOpen }) => css`
-    position: absolute;
+    position: fixed;
+    z-index: ${theme.layers.menu};
     display: flex;
     flex-direction: column;
     justify-content: space-between;
