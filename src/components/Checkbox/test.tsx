@@ -44,5 +44,30 @@ describe('<Checkbox />', () => {
     await waitFor(() => {
       expect(onCheck).toHaveBeenCalledTimes(1)
     })
+
+    expect(onCheck).toHaveBeenCalledWith(true)
+  })
+
+  it('should dispatch onCheck with false value when checked by default', async () => {
+    const onCheck = jest.fn()
+
+    renderWithTheme(
+      <Checkbox
+        label="checkbox label"
+        labelFor="check"
+        onCheck={onCheck}
+        isChecked
+      />
+    )
+
+    expect(onCheck).not.toHaveBeenCalled()
+
+    userEvent.click(screen.getByLabelText(/checkbox label/i))
+
+    await waitFor(() => {
+      expect(onCheck).toHaveBeenCalledTimes(1)
+    })
+
+    expect(onCheck).toHaveBeenCalledWith(false)
   })
 })
