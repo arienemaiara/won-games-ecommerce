@@ -1,5 +1,6 @@
 import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { Email } from '@styled-icons/material-outlined'
 
 import { renderWithTheme } from 'utils/tests/helpers'
 
@@ -19,6 +20,18 @@ describe('<TextField />', () => {
   it('should render with placeholder', () => {
     renderWithTheme(<TextField placeholder="hello" />)
     expect(screen.getByPlaceholderText('hello')).toBeInTheDocument()
+  })
+
+  it('should render with icon', () => {
+    renderWithTheme(<TextField icon={<Email data-testid="icon" />} />)
+    expect(screen.getByTestId('icon')).toBeInTheDocument()
+  })
+
+  it('should render with icon on the right', () => {
+    renderWithTheme(
+      <TextField icon={<Email data-testid="icon" />} iconPosition="right" />
+    )
+    expect(screen.getByTestId('icon').parentElement).toHaveStyle({ order: 1 })
   })
 
   it('should change its value when typing', async () => {
