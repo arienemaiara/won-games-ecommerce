@@ -10,8 +10,8 @@ describe('<FormSignUp />', () => {
 
     expect(screen.getByPlaceholderText(/name/i)).toBeInTheDocument()
     expect(screen.getByPlaceholderText(/email/i)).toBeInTheDocument()
-    expect(screen.getByPlaceholderText(/password/i)).toBeInTheDocument()
-    expect(screen.getByPlaceholderText(/confirm password/i)).toBeInTheDocument()
+    expect(screen.getByPlaceholderText('Password')).toBeInTheDocument()
+    expect(screen.getByPlaceholderText('Confirm password')).toBeInTheDocument()
     expect(
       screen.getByRole('button', { name: /sign up now/i })
     ).toBeInTheDocument()
