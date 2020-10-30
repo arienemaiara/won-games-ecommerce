@@ -31,7 +31,7 @@ const wrapperModifiers = {
   `
 }
 
-export const Wrapper = styled.div<LogoProps>`
+export const Wrapper = styled.div<Omit<LogoProps, 'id'>>`
   ${({ theme, color, size, hideOnMobile }) => css`
     color: ${theme.colors[color!]};
 

@@ -6,17 +6,17 @@ import { renderWithTheme } from 'utils/tests/helpers'
 import Heading from '.'
 
 describe('<Heading />', () => {
-  it('should render a black heading by default', () => {
+  it('should render a white heading by default', () => {
     renderWithTheme(<Heading>Won Games</Heading>)
     expect(screen.getByRole('heading', { name: /Won Games/i })).toHaveStyle({
-      color: '#030517'
+      color: '#FAFAFA'
     })
   })
 
-  it('should render a white heading when color is passed', () => {
-    renderWithTheme(<Heading color="white">Won Games</Heading>)
+  it('should render a black heading when color is passed', () => {
+    renderWithTheme(<Heading color="black">Won Games</Heading>)
     expect(screen.getByRole('heading', { name: /Won Games/i })).toHaveStyle({
-      color: '#FAFAFA'
+      color: '#030517'
     })
   })
 
@@ -42,6 +42,13 @@ describe('<Heading />', () => {
     renderWithTheme(<Heading size="small">Won Games</Heading>)
     expect(screen.getByRole('heading', { name: /Won Games/i })).toHaveStyle({
       'font-size': '1.6rem'
+    })
+  })
+
+  it('should render a heading with a huge size', () => {
+    renderWithTheme(<Heading size="huge">Won Games</Heading>)
+    expect(screen.getByRole('heading', { name: /Won Games/i })).toHaveStyle({
+      'font-size': '5.2rem'
     })
   })
 })
