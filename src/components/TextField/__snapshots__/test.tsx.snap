@@ -64,6 +64,7 @@ exports[`<TextField /> should render error message 1`] = `
     <input
       class="c5"
       id="TextField"
+      name="TextField"
       type="text"
       value=""
     />
