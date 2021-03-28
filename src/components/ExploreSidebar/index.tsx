@@ -3,11 +3,11 @@ import { Close } from '@styled-icons/material-outlined/Close'
 import { FilterList } from '@styled-icons/material-outlined/FilterList'
 
 import Heading from 'components/Heading'
+import Button from 'components/Button'
 import Checkbox from 'components/Checkbox'
 import Radio from 'components/Radio'
 
 import * as S from './styles'
-import Button from 'components/Button'
 
 export type ItemProps = {
   title: string
@@ -55,6 +55,7 @@ const ExploreSidebar = ({
         <FilterList aria-label="open filters" onClick={() => setIsOpen(true)} />
         <Close aria-label="close filters" onClick={() => setIsOpen(false)} />
       </S.IconWrapper>
+
       <S.Content>
         {items.map((item) => (
           <S.Items key={item.title}>
@@ -98,7 +99,6 @@ const ExploreSidebar = ({
       </S.Footer>
     </S.Wrapper>
   )
-
 }
 
 export default ExploreSidebar
