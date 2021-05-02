@@ -25,7 +25,7 @@ export async function getStaticProps() {
         slug: game.slug,
         developer: game.developers[0].name,
         img: game.cover?.url || 'https://source.unsplash.com/user/willianjusten/300x140', //TODO - Arrumar imagens backend
-        price: new Intl.NumberFormat('en', { style: 'currency', currency: 'USD' }).format(game.price)
+        price: game.price
       })),
       filterItems: filterItemsMock
     }
